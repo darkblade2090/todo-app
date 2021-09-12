@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Todo App</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+       <style>
+        body { 
+            background-image: url("https://w0.peakpx.com/wallpaper/192/971/HD-wallpaper-brickwall-black-18-abstract-brick-wall-thumbnail.jpg");
+
+         background-attachment: scroll;
+        
+       }
+       
+       h1 { 
+            color: #fff; 
+        font-family: 'Righteous', cursive; 
+        font-size: 65px; 
+        font-weight: normal; 
+        line-height: 60px; 
+        margin: 10px 0 20px;  
+        text-shadow: 2px 2px 0 #000;
+        margin: 10px 0 24px; 
+        text-align: center;
+        font-variant: small-caps;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        padding: 0.4em;
+  ; 
+    
+    }
+    
+
+    .glow {
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #bc13fe,
+    0 0 82px #bc13fe,
+    0 0 92px #bc13fe,
+    0 0 102px #bc13fe,
+    0 0 151px #bc13fe;
+}
+      
+
+      </style>
+  </head>
+  
+  <body>
+  
+
+   </head>
+   <body >
+     <h1 class="text-center glow " >Todo App</h1>
+     <div class="container mt-5">
+      <form action="/add/todo" method="POST" class="d-flex">
+          <input type="text" name="todo" class="form-control" placeholder="Enter Todo">
+          <input type="submit" value="Add Todo" class="btn btn-md btn-primary mx-2">
+      </form>
+  
+      <h2 class="text-center pt-5 pb-1 text-white">
+           All Todos:
+       </h2>
+      <ul class="list-group my-5 text-break text-wrap text-justify ">
+          <% todo.forEach(todos => { %>
+          <li class="list-group-item "><%= todos.todo %> <a href="/delete/todo/<%= todos._id %>"
+                  class="btn btn-danger btn-sm float-right">Delete</a></li>
+          <% }) %>
+  
+      </ul>
+  </div>
+  
+
+   
+  
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+crossorigin="anonymous"></script>
+      </body>
+</html>
